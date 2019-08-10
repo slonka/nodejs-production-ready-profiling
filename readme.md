@@ -1,6 +1,6 @@
 # Support for profiling inside worker-threads
 
-## Running node build in profiler
+## Running node build-in profiler
 
 ```
 node --prof node-prof.js
