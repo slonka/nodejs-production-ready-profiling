@@ -28,6 +28,24 @@ Seems to not contain `workerSpin()` function.
 
 ![flamegraph](flamegraph.png)
 
+## Running pprof on worker thread
+
+```
+node pprof-worker.js
+(node:96547) UnhandledPromiseRejectionWarning: TypeError: process._startProfilerIdleNotifier is not a function
+    at start (./node-and-workers-on-demand-profiler/node_modules/pprof/out/src/time-profiler.js:52:13)
+    at Object.<anonymous> (./node-and-workers-on-demand-profiler/node_modules/pprof/out/src/time-profiler.js:33:22)
+    at Generator.next (<anonymous>)
+    at ./node-and-workers-on-demand-profiler/node_modules/pprof/out/src/time-profiler.js:22:71
+    at new Promise (<anonymous>)
+    at __awaiter (./node-and-workers-on-demand-profiler/node_modules/pprof/out/src/time-profiler.js:18:12)
+    at Object.profile (./node-and-workers-on-demand-profiler/node_modules/pprof/out/src/time-profiler.js:32:12)
+    at a ([worker eval]:5:38)
+    at [worker eval]:15:1
+    at Script.runInThisContext (vm.js:123:20)
+(node:96547) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
+(node:96547) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+```
 
 ## Running pprof on both main and worker thread
 
