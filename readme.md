@@ -1,9 +1,11 @@
 # Support for profiling inside worker-threads
 
+Tried on OSX node 12.6.0 and 11.15.0
+
 ## Running node build-in profiler
 
 ```
-node --prof node-prof.js
+node --experimental-worker --prof node-prof.js
 ```
 
 Produces 2 isolate files, you can check that both functions were recorded by running:
@@ -20,7 +22,7 @@ code-creation,LazyCompile,0,37921,0x1be758583660,576,workerSpin [worker eval]:2:
 ## Running pprof on only main thread
 
 ```
-node pprof-main.js
+node --experimental-worker pprof-main.js
 pprof -http=: wall.pb.gz
 ```
 
@@ -31,7 +33,7 @@ Seems to not contain `workerSpin()` function.
 ## Running pprof on worker thread
 
 ```
-node pprof-worker.js
+node --experimental-worker pprof-worker.js
 (node:96547) UnhandledPromiseRejectionWarning: TypeError: process._startProfilerIdleNotifier is not a function
     at start (./node-and-workers-on-demand-profiler/node_modules/pprof/out/src/time-profiler.js:52:13)
     at Object.<anonymous> (./node-and-workers-on-demand-profiler/node_modules/pprof/out/src/time-profiler.js:33:22)
@@ -52,7 +54,7 @@ node pprof-worker.js
 This ends up in the following error:
 
 ```
-node pprof-worker-main.js
+node --experimental-worker pprof-worker-main.js
 
 events.js:180
       throw er; // Unhandled 'error' event
