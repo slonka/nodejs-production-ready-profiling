@@ -1,3 +1,5 @@
 node_modules/
 isolate*
-wall*
+wall*flamegraph.html
+wall.pb.gz
+flamegraph.html

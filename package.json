@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "pprof": "^1.1.0"
+    "@openprofiling/nodejs": "^0.1.0",
+    "pprof": "^1.1.0",
+    "v8-profiler-next": "^1.1.1"
   }
 }
