@@ -3,3 +3,4 @@ isolate*
 wall*flamegraph.html
 wall.pb.gz
 flamegraph.html
+*.cpuprofile
