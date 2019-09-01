@@ -1,4 +1,4 @@
-# Support for profiling inside worker-threads
+# Production ready profiling - profiler comparision
 
 Tried on OSX node 12.6.0 and 11.15.0
 
@@ -81,3 +81,17 @@ Emitted 'error' event at:
     at MessagePort.emit (events.js:203:13)
     at MessagePort.onmessage (internal/worker/io.js:70:8)
 ```
+
+## Running node-cpu-profiler
+
+```
+node --experimental-worker --cpu-prof node-cpu-profiler.js
+```
+
+Works good for both of main and worker threads but requires an app to stop to produce the logs.
+
+## Running node inspector
+
+```
+node --experimental-worker --cpu-prof node-cpu-profiler.js
+``
