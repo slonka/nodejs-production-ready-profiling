@@ -11,8 +11,8 @@ Summary
 | Start/Stop               | [from this I'm guessing not](https://github.com/davidmarkclements/0x/blob/master/docs/production-servers.md) | ❌                          | ✅ | ❌ | ✅ |
 | Sampling Frequency       | ❌| ❌                          | ✅ | ✅ | ✅ |
 | worker-threads           | ❌| ✅                          | ❌ | ✅ | ✅ |
-| ready for production use | ❌| ❌                          | ⚠️ | ❌ | ⚠️ |
 | output dumped            | on exit | continuously                | via api | on exit | via api |
+| ready for production use | ❌| ❌                          | ⚠️ | ❌ | ⚠️ |
 | additional notes         | | can't rotate logs           | [v8-prof-next](https://github.com/hyj1991/v8-profiler-next/issues/9) [pprof](https://github.com/google/pprof-nodejs/issues/79) | | seems the most promising if it wasn't in experimental state|
 
 ## Running node build-in profiler
