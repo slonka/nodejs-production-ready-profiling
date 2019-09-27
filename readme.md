@@ -4,15 +4,16 @@ Tried on OSX node 12.6.0 and 11.15.0
 
 Summary
 
-|                          | --prof                  | pprof / v8-profiler-next | --cpu-prof | inspector |
-| ------------------------ | ----------------------- | ----- | - | - |
-| Status                   | [deprecated?](https://github.com/nodejs/diagnostics/issues/148#issue-295745600) | under active development | [experimental](https://nodejs.org/api/cli.html#cli_cpu_prof) | [experimental](https://nodejs.org/api/inspector.html#inspector_cpu_profiler) |
-| Start/Stop               | ❌                          | ✅ | ❌ | ✅ |
-| Sampling Frequency       | ❌                          | ✅ | ✅ | ✅ |
-| worker-threads           | ✅                          | ❌ | ✅ | ✅ |
-| ready for production use | ❌                          | ⚠️ | ❌ | ⚠️ |
-| output dumped            | continuously                | via api | requires stopping the app to produce output | via api |
-| additional notes         | can't rotate logs           | [v8-prof-next](https://github.com/hyj1991/v8-profiler-next/issues/9) [pprof](https://github.com/google/pprof-nodejs/issues/79) | | seems the most promising if it wasn't in experimental state|
+|                          | 0x |--prof                  | pprof / v8-profiler-next | --cpu-prof | inspector |
+| ------------------------ | -- | ----------------------- | ----- | - | - |
+| Status                   | stable / under active development | stable (?) | stable / under active development | [experimental](https://nodejs.org/api/cli.html#cli_cpu_prof) | [experimental](https://nodejs.org/api/inspector.html#inspector_cpu_profiler) |
+| Support for Cluster module | ❌| ✅                          | ✅ | ✅ | ✅ |
+| Start/Stop               | [from this I'm guessing not](https://github.com/davidmarkclements/0x/blob/master/docs/production-servers.md) | ❌                          | ✅ | ❌ | ✅ |
+| Sampling Frequency       | ❌| ❌                          | ✅ | ✅ | ✅ |
+| worker-threads           | ❌| ✅                          | ❌ | ✅ | ✅ |
+| ready for production use | ❌| ❌                          | ⚠️ | ❌ | ⚠️ |
+| output dumped            | on exit | continuously                | via api | on exit | via api |
+| additional notes         | | can't rotate logs           | [v8-prof-next](https://github.com/hyj1991/v8-profiler-next/issues/9) [pprof](https://github.com/google/pprof-nodejs/issues/79) | | seems the most promising if it wasn't in experimental state|
 
 ## Running node build-in profiler
 
